@@ -5,6 +5,7 @@ from ..models import User
 from ..databasemodels import get_db
 from sqlalchemy import Session
 
+router = APIRouter()
 @router.delete('/delete')
 def delete_user(current_user: User=Depends(get_admin_permission), db: Session=Depends(get_db)):
   admin_count = db.query(models.User).filter(models.User.role == "admin").count()
