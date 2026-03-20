@@ -1,6 +1,7 @@
 from ..databasemodels import get_db
 from fastapi import APIRouter, Depends, HTTPException 
 from . import models 
+from sqlalchemy import Session
 from ..models import User
 import bcrypt
 from jose import jwt
