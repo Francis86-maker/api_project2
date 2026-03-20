@@ -3,6 +3,7 @@ from . import models
 from ..models import User
 from auth import get_active_user
 from ..databasemodels import get_db
+from sqlalchemy import Session
 
 router = APIRouter()
 
