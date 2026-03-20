@@ -14,4 +14,9 @@ def get_active_user(token: str=Depends(oauth2_scheme), db: Session=Depends(get_d
     raise HTTPException(status=404, detail="not found")
   return user
 
-def get_admin_permission
+def get_admin_permission(current_user: User=Depends(get_active_user), db: Session=Depends(get_db)):
+  if current_user.role != "admin":
+    raise HTTPException(status_code=403, detail="not accepted")
+  return {
+    "message": "done"
+  }
