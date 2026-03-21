@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException 
-from ..models import Items
+from ..models import Items, User
 from ..databasemodels import get_db
 from . import models 
 from auth import get_active_user
